@@ -1,0 +1,108 @@
+2021-03-18 13:41:54.954 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:41:54.978 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:41:55.009 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:41:55.011 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:41:55.012 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:41:55.015 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:41:55.022 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ?
+2021-03-18 13:41:55.023 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long)
+2021-03-18 13:41:55.039 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
+2021-03-18 13:41:55.089 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:41:55.089 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:41:55.093 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:41:58.692 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id WHERE (department_id = ?)
+2021-03-18 13:41:58.692 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 1(Long)
+2021-03-18 13:41:58.693 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:41:58.694 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id WHERE (department_id = ?) LIMIT ?
+2021-03-18 13:41:58.695 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 1(Long), 7(Long)
+2021-03-18 13:41:58.699 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
+2021-03-18 13:42:38.576 [DEBUG] com.edward.system.mapper.TbUserMapper.selectCount - ==>  Preparing: SELECT COUNT( 1 ) FROM tb_user WHERE deleted=0 AND (username = ?)
+2021-03-18 13:42:38.577 [DEBUG] com.edward.system.mapper.TbUserMapper.selectCount - ==> Parameters: es(String)
+2021-03-18 13:42:38.578 [DEBUG] com.edward.system.mapper.TbUserMapper.selectCount - <==      Total: 1
+2021-03-18 13:42:38.579 [DEBUG] com.edward.system.mapper.DepartmentMapper.selectById - ==>  Preparing: SELECT id,name,phone,address,create_time,modified_time,mgr_id FROM tb_department WHERE id=?
+2021-03-18 13:42:38.580 [DEBUG] com.edward.system.mapper.DepartmentMapper.selectById - ==> Parameters: 1(Long)
+2021-03-18 13:42:38.581 [DEBUG] com.edward.system.mapper.DepartmentMapper.selectById - <==      Total: 1
+2021-03-18 13:42:38.694 [DEBUG] com.edward.system.mapper.TbUserMapper.insert - ==>  Preparing: INSERT INTO tb_user ( username, nickname, email, avatar, phone_number, status, create_time, modified_time, sex, salt, type, password, birth, department_id, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2021-03-18 13:42:38.696 [DEBUG] com.edward.system.mapper.TbUserMapper.insert - ==> Parameters: es(String), es(String), 123@email.com(String), http://xinguan-parent-e.oss-cn-guangzhou.aliyuncs.com/2021/03/18/457174415e714cbba4311f3164833da9.png(String), 1452365478(String), 1(Integer), 2021-03-18 13:42:38.691(Timestamp), 2021-03-18 13:42:38.694(Timestamp), 0(Integer), b5b69bcc-afad-478a-84e0-d4fb0e53(String), 1(Integer), $2a$10$n4FG.iTtu0z9yY.qBjNqAe5Jw6eRXr/KxxdJjltFhaX/8O1b6wkam(String), 2021-03-21 00:00:00.0(Timestamp), 1(Long), false(Boolean)
+2021-03-18 13:42:38.983 [DEBUG] com.edward.system.mapper.TbUserMapper.insert - <==    Updates: 1
+2021-03-18 13:42:46.277 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:42:46.277 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:42:46.278 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:42:46.279 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:42:46.280 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:42:46.281 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:42:46.282 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ?
+2021-03-18 13:42:46.282 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long)
+2021-03-18 13:42:46.290 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
+2021-03-18 13:42:52.609 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id WHERE (username = ?)
+2021-03-18 13:42:52.609 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: ed(String)
+2021-03-18 13:42:52.611 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:42:56.843 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:42:56.843 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:42:56.848 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:42:56.848 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:42:56.849 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:42:56.850 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:42:56.852 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ?
+2021-03-18 13:42:56.852 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long)
+2021-03-18 13:42:56.857 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
+2021-03-18 13:42:58.066 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:42:58.067 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:42:58.072 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:42:58.073 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ? OFFSET ?
+2021-03-18 13:42:58.074 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long), 77(Long)
+2021-03-18 13:42:58.076 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 5
+2021-03-18 13:43:05.106 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:43:05.106 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:43:05.107 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:05.108 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:05.108 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:43:05.109 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:05.111 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ? OFFSET ?
+2021-03-18 13:43:05.112 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long), 77(Long)
+2021-03-18 13:43:05.114 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 5
+2021-03-18 13:43:08.103 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:43:08.103 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:43:08.104 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:08.105 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:08.106 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:08.106 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:43:08.108 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ? OFFSET ?
+2021-03-18 13:43:08.108 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long), 77(Long)
+2021-03-18 13:43:08.111 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 5
+2021-03-18 13:43:09.155 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:09.155 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:09.156 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:09.157 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ?
+2021-03-18 13:43:09.158 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long)
+2021-03-18 13:43:09.160 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
+2021-03-18 13:43:10.309 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:43:10.309 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:43:10.310 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:10.310 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:10.311 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:43:10.311 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:10.312 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ?
+2021-03-18 13:43:10.313 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long)
+2021-03-18 13:43:10.316 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
+2021-03-18 13:43:13.600 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:13.601 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:13.602 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:13.603 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ? OFFSET ?
+2021-03-18 13:43:13.603 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long), 77(Long)
+2021-03-18 13:43:13.605 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 5
+2021-03-18 13:43:15.016 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==>  Preparing: select d.id, d.name, ifnull((select count(*) from tb_user u where u.department_id = d.id and u.deleted = 0 group by department_id), 0) as deptCount from tb_department d
+2021-03-18 13:43:15.018 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - ==> Parameters: 
+2021-03-18 13:43:15.019 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:15.019 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:15.020 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:15.020 [DEBUG] com.edward.system.mapper.DepartmentMapper.findDeptAndCount - <==      Total: 5
+2021-03-18 13:43:15.021 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ? OFFSET ?
+2021-03-18 13:43:15.022 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long), 77(Long)
+2021-03-18 13:43:15.024 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 5
+2021-03-18 13:43:17.438 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==>  Preparing: SELECT COUNT(1) FROM tb_user u INNER JOIN tb_department d ON u.department_id = d.id
+2021-03-18 13:43:17.439 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - ==> Parameters: 
+2021-03-18 13:43:17.440 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage_mpCount - <==      Total: 1
+2021-03-18 13:43:17.440 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==>  Preparing: select u.`id`,`username`, `nickname`, `email`, `avatar`, `phone_number`, `status`, u.`create_time`, u.`modified_time`, `sex`, `salt`, `type`, `password`, `birth`, `department_id`, `deleted`, d.name as name from tb_user u inner join tb_department d on u.department_id = d.id LIMIT ?
+2021-03-18 13:43:17.441 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - ==> Parameters: 7(Long)
+2021-03-18 13:43:17.443 [DEBUG] com.edward.system.mapper.TbUserMapper.findUserPage - <==      Total: 7
